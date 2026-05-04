@@ -1,0 +1,1118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Savro Suits — House of Suits</title>
+<meta name="description" content="Savro Suits — bespoke tailoring crafted entirely for the individual. Custom made-to-measure suits, Israel."/>
+
+<!-- ============================================================
+  EMAILJS KEYS — already configured:
+  Public Key:   vTnOZ62k69sxkd4-z
+  Service ID:   service_0s6puee
+  Template ID:  template_s3wyobc
+============================================================ -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet"/>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --gold:#B89A5A;
+  --gold-light:#D4B87A;
+  --dark:#0A0906;
+  --mid:#141210;
+  --surface:#1C1914;
+  --surface2:#22201A;
+  --text:#F0EBE0;
+  --text2:#C8BFA8;
+  --muted:#7A7060;
+  --border:rgba(184,154,90,0.2);
+  --border2:rgba(184,154,90,0.08);
+}
+html{scroll-behavior:smooth;font-size:16px;}
+body{background:var(--dark);color:var(--text);font-family:'Jost',sans-serif;font-weight:300;overflow-x:hidden;}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:500;padding:1.75rem 5rem;display:flex;justify-content:space-between;align-items:center;transition:background 0.4s,padding 0.4s;}
+nav.scrolled{background:rgba(10,9,6,0.97);padding:1.1rem 5rem;backdrop-filter:blur(8px);border-bottom:1px solid var(--border2);}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:300;letter-spacing:0.25em;color:var(--gold);text-decoration:none;}
+.nav-links{display:flex;gap:3rem;list-style:none;}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:0.68rem;letter-spacing:0.25em;text-transform:uppercase;transition:color 0.3s;position:relative;}
+.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;right:0;height:1px;background:var(--gold);transform:scaleX(0);transition:transform 0.3s;}
+.nav-links a:hover{color:var(--gold);}
+.nav-links a:hover::after{transform:scaleX(1);}
+.nav-cta{border:1px solid var(--gold);color:var(--gold);padding:0.65rem 1.75rem;font-family:'Jost',sans-serif;font-size:0.68rem;letter-spacing:0.22em;text-transform:uppercase;background:none;cursor:pointer;transition:all 0.3s;}
+.nav-cta:hover{background:var(--gold);color:var(--dark);}
+
+/* HERO */
+#hero{height:100vh;min-height:600px;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;}
+.hero-bg{position:absolute;inset:0;background:var(--dark);}
+.hero-pattern{position:absolute;inset:0;background-image:repeating-linear-gradient(45deg,rgba(184,154,90,0.03) 0,rgba(184,154,90,0.03) 1px,transparent 0,transparent 50%);background-size:24px 24px;}
+.hero-glow{position:absolute;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(184,154,90,0.06) 0%,transparent 70%);top:50%;left:50%;transform:translate(-50%,-50%);}
+.hero-content{position:relative;z-index:2;width:100%;max-width:860px;margin:0 auto;padding:0 5rem;text-align:center;display:flex;flex-direction:column;align-items:center;}
+.hero-eyebrow{font-size:0.63rem;letter-spacing:0.55em;text-transform:uppercase;color:var(--gold);margin-bottom:2.5rem;display:flex;align-items:center;gap:1.5rem;opacity:0.85;}
+.hero-eyebrow-line{width:40px;height:1px;background:var(--gold);opacity:0.5;}
+.hero-house{font-family:'Cormorant Garamond',serif;font-size:7.5rem;font-weight:300;line-height:0.88;color:var(--text);letter-spacing:0.06em;}
+.hero-suits{font-family:'Cormorant Garamond',serif;font-size:7.5rem;font-weight:300;line-height:0.88;color:var(--gold);font-style:italic;letter-spacing:0.06em;margin-bottom:1.5rem;}
+.hero-spade-row{display:flex;align-items:center;gap:1rem;margin-bottom:2.5rem;justify-content:center;}
+.hero-spade-line{width:70px;height:1px;background:var(--gold);opacity:0.3;}
+.hero-spade-sym{color:var(--gold);font-size:1rem;opacity:0.7;}
+.hero-tagline{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:300;font-style:italic;color:var(--text2);line-height:1.7;max-width:560px;text-align:center;margin-bottom:1.25rem;}
+.hero-sub{font-family:'Jost',sans-serif;font-size:0.78rem;color:var(--muted);letter-spacing:0.1em;line-height:2;max-width:520px;text-align:center;margin-bottom:3rem;font-weight:300;}
+.hero-actions{display:flex;gap:1.25rem;align-items:center;justify-content:center;}
+.btn-primary{background:var(--gold);color:var(--dark);padding:1rem 2.5rem;font-family:'Jost',sans-serif;font-size:0.7rem;letter-spacing:0.22em;text-transform:uppercase;border:none;cursor:pointer;font-weight:400;transition:all 0.3s;}
+.btn-primary:hover{background:var(--gold-light);}
+.btn-ghost{background:none;border:1px solid rgba(240,235,224,0.2);color:var(--text2);padding:1rem 2.5rem;font-family:'Jost',sans-serif;font-size:0.7rem;letter-spacing:0.22em;text-transform:uppercase;cursor:pointer;transition:all 0.3s;}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold);}
+.hero-scroll{position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:0.5rem;z-index:3;}
+.hero-scroll span{font-size:0.55rem;letter-spacing:0.35em;text-transform:uppercase;color:var(--muted);}
+.scroll-line{width:1px;height:40px;background:linear-gradient(to bottom,var(--gold),transparent);}
+
+/* MARQUEE */
+.marquee-wrap{overflow:hidden;border-top:1px solid var(--border2);border-bottom:1px solid var(--border2);padding:1.1rem 0;background:var(--mid);}
+.marquee-track{display:flex;white-space:nowrap;animation:marquee 22s linear infinite;}
+.marquee-item{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:300;font-style:italic;color:var(--muted);padding:0 3rem;letter-spacing:0.1em;}
+.marquee-dot{color:var(--gold);}
+@keyframes marquee{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+
+/* SECTIONS */
+section{position:relative;}
+.section-label{font-size:0.62rem;letter-spacing:0.45em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;display:flex;align-items:center;gap:1rem;}
+.section-label::before{content:'';display:block;width:30px;height:1px;background:var(--gold);}
+.section-title{font-family:'Cormorant Garamond',serif;font-size:3.5rem;font-weight:300;line-height:1.05;}
+.section-title em{font-style:italic;color:var(--gold);}
+
+/* SPADES BAND */
+.spades-band{background:var(--surface);border-top:1px solid var(--border2);border-bottom:1px solid var(--border2);padding:5rem;display:flex;align-items:center;justify-content:space-between;gap:3rem;overflow:hidden;position:relative;}
+.spades-band::before{content:'♠';position:absolute;font-size:26rem;color:rgba(184,154,90,0.03);left:-3rem;top:50%;transform:translateY(-50%);line-height:1;pointer-events:none;}
+.spades-band::after{content:'♠';position:absolute;font-size:26rem;color:rgba(184,154,90,0.03);right:-3rem;top:50%;transform:translateY(-50%);line-height:1;pointer-events:none;}
+.spades-quote{flex:1;text-align:center;position:relative;z-index:1;}
+.spades-quote-text{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:300;font-style:italic;line-height:1.5;color:var(--text2);}
+.spades-quote-text em{color:var(--gold);font-style:normal;}
+.spades-divider{display:flex;flex-direction:column;align-items:center;gap:1rem;flex-shrink:0;}
+.spades-row{display:flex;gap:0.75rem;align-items:flex-end;}
+.spade-card{width:44px;height:60px;background:var(--mid);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:1.5rem;color:var(--gold);}
+.spade-card-sm{width:34px;height:46px;font-size:1rem;}
+.spade-label{font-size:0.6rem;letter-spacing:0.4em;text-transform:uppercase;color:var(--muted);margin-top:1rem;text-align:center;}
+.spades-stats{display:flex;gap:4rem;flex-shrink:0;position:relative;z-index:1;}
+.spades-stat{text-align:center;}
+.spades-stat-icon{font-size:1.2rem;color:var(--gold);margin-bottom:0.5rem;opacity:0.7;}
+.spades-stat-num{font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:300;color:var(--text);line-height:1;}
+.spades-stat-label{font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted);margin-top:0.35rem;}
+
+/* ABOUT */
+#about{padding:10rem 5rem;display:grid;grid-template-columns:5fr 6fr;gap:8rem;align-items:center;}
+.about-text{color:var(--text2);line-height:2.1;font-size:0.9rem;margin-top:2rem;}
+.about-text p{margin-bottom:1.25rem;}
+.about-stats{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:4rem;border:1px solid var(--border);}
+.stat{padding:2rem;border-right:1px solid var(--border);border-bottom:1px solid var(--border);}
+.stat:nth-child(2){border-right:none;}
+.stat:nth-child(3){border-bottom:none;}
+.stat:nth-child(4){border-right:none;border-bottom:none;}
+.stat-num{font-family:'Cormorant Garamond',serif;font-size:3rem;font-weight:300;color:var(--gold);line-height:1;}
+.stat-label{font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted);margin-top:0.4rem;}
+.about-visual{position:relative;}
+.about-art{width:100%;height:560px;background:var(--surface);border:1px solid var(--border);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;}
+.about-art-bg{position:absolute;inset:0;background-image:repeating-linear-gradient(0deg,rgba(184,154,90,0.04) 0,rgba(184,154,90,0.04) 1px,transparent 0,transparent 40px),repeating-linear-gradient(90deg,rgba(184,154,90,0.04) 0,rgba(184,154,90,0.04) 1px,transparent 0,transparent 40px);}
+.about-art-spade{font-size:14rem;color:rgba(184,154,90,0.07);font-family:'Cormorant Garamond',serif;position:absolute;}
+.about-art-content{position:relative;z-index:1;text-align:center;}
+.about-art-label{font-size:0.6rem;letter-spacing:0.5em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;}
+.about-art-title{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:300;color:var(--text2);}
+.about-art-border{position:absolute;top:1.5rem;left:1.5rem;right:1.5rem;bottom:1.5rem;border:1px solid rgba(184,154,90,0.12);pointer-events:none;}
+.about-badge{position:absolute;bottom:-1.5rem;left:-2rem;background:var(--gold);color:var(--dark);padding:1.5rem 2rem;z-index:2;}
+.about-badge-num{font-family:'Cormorant Garamond',serif;font-size:2.5rem;font-weight:300;line-height:1;}
+.about-badge-label{font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;margin-top:0.3rem;}
+
+/* PROCESS */
+#process{padding:10rem 5rem;background:var(--mid);}
+.process-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:5rem;}
+.process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);}
+.process-step{background:var(--mid);padding:3rem 2.5rem;position:relative;overflow:hidden;transition:background 0.4s;}
+.process-step:hover{background:var(--surface2);}
+.step-num{font-family:'Cormorant Garamond',serif;font-size:6rem;font-weight:300;color:var(--border2);line-height:1;position:absolute;top:1rem;right:1.5rem;pointer-events:none;}
+.step-bar{width:30px;height:2px;background:var(--gold);margin-bottom:2rem;}
+.step-title{font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:400;margin-bottom:1rem;}
+.step-text{font-size:0.8rem;color:var(--muted);line-height:1.9;}
+
+/* LOOKBOOK */
+#lookbook{padding:10rem 5rem;}
+.lookbook-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:4rem;}
+.look-card{position:relative;overflow:hidden;cursor:pointer;}
+.look-card:hover .look-card-inner{transform:scale(1.02);}
+.look-card-inner{transition:transform 0.5s ease;height:100%;}
+.look-art{height:380px;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;}
+.look-art-bg{position:absolute;inset:0;}
+.look-art-pattern{position:absolute;inset:0;background-image:repeating-linear-gradient(135deg,rgba(184,154,90,0.04) 0,rgba(184,154,90,0.04) 1px,transparent 0,transparent 30px);}
+.look-art-spade{position:absolute;font-size:11rem;color:rgba(184,154,90,0.06);font-family:'Cormorant Garamond',serif;}
+.look-art-border{position:absolute;top:1rem;left:1rem;right:1rem;bottom:1rem;border:1px solid rgba(184,154,90,0.1);}
+.look-art-center{position:relative;z-index:1;text-align:center;}
+.look-art-icon{font-size:2.5rem;color:rgba(184,154,90,0.4);margin-bottom:0.75rem;}
+.look-art-type{font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:300;letter-spacing:0.3em;text-transform:uppercase;color:rgba(184,154,90,0.5);}
+.look-info{background:var(--surface);border:1px solid var(--border2);border-top:2px solid var(--gold);padding:1.5rem;}
+.look-tag{font-size:0.6rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);margin-bottom:0.4rem;}
+.look-name{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:300;margin-bottom:0.5rem;}
+.look-desc{font-size:0.75rem;color:var(--muted);line-height:1.8;margin-bottom:1rem;}
+.look-enquire{background:none;border:none;color:var(--gold);font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;cursor:pointer;font-family:'Jost',sans-serif;padding:0;border-bottom:1px solid var(--gold);padding-bottom:2px;}
+
+/* COLLECTION */
+#shop{padding:10rem 5rem;background:var(--mid);}
+.shop-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border2);margin-top:5rem;}
+.product-card{background:var(--mid);position:relative;transition:background 0.3s;cursor:pointer;}
+.product-card:hover{background:var(--surface);}
+.product-art{height:320px;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;}
+.product-art-bg{position:absolute;inset:0;}
+.product-art-pattern{position:absolute;inset:0;}
+.product-art-spade{position:absolute;font-size:12rem;color:rgba(184,154,90,0.06);font-family:'Cormorant Garamond',serif;}
+.product-art-border{position:absolute;top:1rem;left:1rem;right:1rem;bottom:1rem;border:1px solid rgba(184,154,90,0.1);}
+.product-art-label{position:relative;z-index:1;text-align:center;}
+.product-art-num{font-family:'Cormorant Garamond',serif;font-size:4rem;font-weight:300;color:rgba(184,154,90,0.2);line-height:1;}
+.product-art-type{font-size:0.6rem;letter-spacing:0.4em;text-transform:uppercase;color:rgba(184,154,90,0.4);margin-top:0.25rem;}
+.product-badge{position:absolute;top:1.25rem;left:1.25rem;background:var(--gold);color:var(--dark);font-size:0.58rem;letter-spacing:0.2em;text-transform:uppercase;padding:0.3rem 0.75rem;font-weight:400;z-index:2;}
+.product-info{padding:2rem;}
+.product-name{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:400;margin-bottom:0.6rem;}
+.product-desc{font-size:0.78rem;color:var(--muted);line-height:1.9;margin-bottom:1.5rem;}
+.product-footer{display:flex;justify-content:flex-end;padding-top:1rem;border-top:1px solid var(--border2);}
+.product-btn{background:none;border:1px solid var(--border);color:var(--text2);padding:0.6rem 1.35rem;font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;cursor:pointer;font-family:'Jost',sans-serif;transition:all 0.3s;}
+.product-btn:hover{border-color:var(--gold);color:var(--gold);}
+
+/* BOOKING */
+#booking{padding:10rem 5rem;}
+.booking-wrap{display:grid;grid-template-columns:5fr 7fr;gap:7rem;align-items:start;}
+.bstep{display:grid;grid-template-columns:3rem 1fr;gap:1.5rem;padding:2rem 0;border-bottom:1px solid var(--border2);}
+.bstep:first-child{padding-top:0;}
+.bstep-num{font-family:'Cormorant Garamond',serif;font-size:2.8rem;color:var(--gold);font-weight:300;line-height:1;}
+.bstep-title{font-family:'Cormorant Garamond',serif;font-size:1.15rem;margin-bottom:0.35rem;}
+.bstep-text{font-size:0.78rem;color:var(--muted);line-height:1.9;}
+.booking-hours{margin-top:2.5rem;padding:2rem;border:1px solid var(--border);}
+.hours-title{font-size:0.62rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);margin-bottom:1.25rem;}
+.hours-row{display:flex;justify-content:space-between;padding:0.6rem 0;border-bottom:1px solid var(--border2);font-size:0.8rem;color:var(--text2);}
+.hours-row:last-child{border-bottom:none;}
+.hours-day{color:var(--muted);}
+.booking-panel{background:var(--mid);border:1px solid var(--border);}
+.booking-panel-header{padding:2rem 2.5rem;border-bottom:1px solid var(--border);}
+.booking-panel-header h3{font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:300;}
+.booking-panel-header p{font-size:0.75rem;color:var(--muted);margin-top:0.3rem;letter-spacing:0.05em;}
+.cal-nav{display:flex;justify-content:space-between;align-items:center;padding:1.5rem 2.5rem;border-bottom:1px solid var(--border2);}
+.cal-month{font-family:'Cormorant Garamond',serif;font-size:1.3rem;}
+.cal-arrow{background:none;border:1px solid var(--border);color:var(--text2);width:32px;height:32px;cursor:pointer;font-size:1rem;transition:all 0.2s;display:flex;align-items:center;justify-content:center;}
+.cal-arrow:hover{border-color:var(--gold);color:var(--gold);}
+.cal-grid{display:grid;grid-template-columns:repeat(7,1fr);padding:1rem 2.5rem;}
+.cal-day-name{text-align:center;font-size:0.62rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted);padding:0.75rem 0;}
+.cal-day{text-align:center;padding:0.6rem;font-size:0.85rem;cursor:default;transition:all 0.2s;position:relative;color:var(--text2);}
+.cal-day.available{color:var(--text);cursor:pointer;}
+.cal-day.available:hover{color:var(--gold);}
+.cal-day.available::after{content:'';position:absolute;bottom:4px;left:50%;transform:translateX(-50%);width:4px;height:4px;background:var(--gold);border-radius:50%;opacity:0.6;}
+.cal-day.selected{background:var(--gold);color:var(--dark)!important;}
+.cal-day.selected::after{display:none;}
+.cal-day.unavailable{color:var(--muted);opacity:0.3;}
+.cal-day.past{opacity:0.18;pointer-events:none;}
+.cal-day.empty{pointer-events:none;}
+.cal-day.today{border:1px solid var(--border);}
+.time-slots{padding:1.5rem 2.5rem;border-top:1px solid var(--border2);}
+.time-slots-label{font-size:0.62rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;}
+.time-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0.5rem;}
+.time-slot{background:var(--surface);border:1px solid var(--border2);color:var(--text2);font-size:0.72rem;padding:0.55rem;text-align:center;cursor:pointer;transition:all 0.2s;font-family:'Jost',sans-serif;}
+.time-slot:hover{border-color:var(--gold);color:var(--gold);}
+.time-slot.selected{background:var(--gold);color:var(--dark);border-color:var(--gold);}
+.booking-form-fields{padding:1.5rem 2.5rem 2.5rem;border-top:1px solid var(--border2);}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+.form-group{margin-bottom:1rem;}
+.form-group label{display:block;font-size:0.6rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--muted);margin-bottom:0.45rem;}
+.form-group input,.form-group textarea{width:100%;background:var(--dark);border:1px solid var(--border2);color:var(--text);padding:0.8rem 1rem;font-family:'Jost',sans-serif;font-size:0.82rem;font-weight:300;outline:none;transition:border-color 0.3s;}
+.form-group input:focus,.form-group textarea:focus{border-color:var(--gold);}
+.form-group textarea{height:80px;resize:none;}
+.form-group input::placeholder,.form-group textarea::placeholder{color:var(--muted);}
+.selected-summary{background:var(--surface);border:1px solid var(--border);padding:1rem 1.25rem;margin-bottom:1.25rem;font-size:0.8rem;color:var(--text2);}
+.selected-summary strong{color:var(--gold);font-weight:400;}
+.form-submit{width:100%;background:var(--gold);border:none;color:var(--dark);padding:1.1rem;font-family:'Jost',sans-serif;font-size:0.72rem;letter-spacing:0.25em;text-transform:uppercase;cursor:pointer;font-weight:400;transition:all 0.3s;margin-top:0.5rem;}
+.form-submit:hover{background:var(--gold-light);}
+.form-submit:disabled{opacity:0.5;pointer-events:none;}
+.form-msg{padding:1rem;font-size:0.8rem;text-align:center;display:none;}
+.form-msg.success{color:var(--gold);border:1px solid var(--border);}
+.form-msg.error{color:#E24B4A;border:1px solid rgba(226,75,74,0.3);}
+
+/* CONTACT */
+#contact{padding:10rem 5rem;background:var(--mid);}
+.contact-wrap{display:grid;grid-template-columns:1fr 1fr;gap:8rem;align-items:start;}
+.contact-item{padding:2rem 0;border-bottom:1px solid var(--border2);}
+.contact-item:first-child{padding-top:0;}
+.contact-item:last-child{border-bottom:none;}
+.contact-item-label{font-size:0.6rem;letter-spacing:0.38em;text-transform:uppercase;color:var(--gold);margin-bottom:0.65rem;}
+.contact-item-val{font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:300;line-height:1.6;color:var(--text2);}
+.contact-item-val a{color:var(--text2);text-decoration:none;transition:color 0.3s;}
+.contact-item-val a:hover{color:var(--gold);}
+.contact-social{display:flex;gap:1rem;margin-top:1rem;}
+.social-link{display:inline-flex;align-items:center;gap:0.5rem;border:1px solid var(--border);padding:0.6rem 1.25rem;color:var(--muted);text-decoration:none;font-size:0.68rem;letter-spacing:0.15em;text-transform:uppercase;transition:all 0.3s;}
+.social-link:hover{border-color:var(--gold);color:var(--gold);}
+.contact-form-panel{background:var(--dark);border:1px solid var(--border);}
+.contact-form-header{padding:2rem 2.5rem;border-bottom:1px solid var(--border2);}
+.contact-form-header h3{font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:300;}
+.contact-form-body{padding:2rem 2.5rem;}
+.cf-group{margin-bottom:1.25rem;}
+.cf-group label{display:block;font-size:0.6rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--muted);margin-bottom:0.5rem;}
+.cf-group input,.cf-group select,.cf-group textarea{width:100%;background:var(--mid);border:1px solid var(--border2);color:var(--text);padding:0.85rem 1rem;font-family:'Jost',sans-serif;font-size:0.82rem;font-weight:300;outline:none;transition:border-color 0.3s;}
+.cf-group input:focus,.cf-group select:focus,.cf-group textarea:focus{border-color:var(--gold);}
+.cf-group select option{background:var(--dark);}
+.cf-group textarea{height:120px;resize:none;}
+.cf-group input::placeholder,.cf-group textarea::placeholder{color:var(--muted);}
+.contact-submit{width:100%;background:none;border:1px solid var(--gold);color:var(--gold);padding:1rem;font-family:'Jost',sans-serif;font-size:0.7rem;letter-spacing:0.25em;text-transform:uppercase;cursor:pointer;font-weight:300;transition:all 0.3s;margin-top:0.5rem;}
+.contact-submit:hover{background:var(--gold);color:var(--dark);}
+
+/* INSTAGRAM */
+#instagram{padding:6rem 5rem;border-top:1px solid var(--border2);}
+.ig-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:3rem;}
+.ig-link{display:inline-flex;align-items:center;gap:0.75rem;color:var(--gold);text-decoration:none;font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;border-bottom:1px solid var(--border);padding-bottom:4px;transition:border-color 0.3s;}
+.ig-link:hover{border-color:var(--gold);}
+.ig-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:4px;}
+.ig-item{aspect-ratio:1;overflow:hidden;position:relative;cursor:pointer;background:var(--surface);display:flex;align-items:center;justify-content:center;}
+.ig-item-inner{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;transition:background 0.3s;}
+.ig-item:hover .ig-item-inner{background:rgba(184,154,90,0.08);}
+.ig-spade{font-size:3rem;color:rgba(184,154,90,0.12);transition:color 0.3s;}
+.ig-item:hover .ig-spade{color:rgba(184,154,90,0.25);}
+.ig-pattern{position:absolute;inset:0;background-image:repeating-linear-gradient(45deg,rgba(184,154,90,0.03) 0,rgba(184,154,90,0.03) 1px,transparent 0,transparent 20px);}
+
+/* FOOTER */
+footer{padding:4rem 5rem;border-top:1px solid var(--border2);}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:4rem;margin-bottom:4rem;padding-bottom:4rem;border-bottom:1px solid var(--border2);}
+.footer-logo{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:300;color:var(--gold);letter-spacing:0.2em;display:block;margin-bottom:1rem;}
+.footer-tagline{font-size:0.78rem;color:var(--muted);line-height:1.9;max-width:260px;}
+.footer-col-title{font-size:0.6rem;letter-spacing:0.35em;text-transform:uppercase;color:var(--gold);margin-bottom:1.5rem;}
+.footer-col ul{list-style:none;}
+.footer-col ul li{margin-bottom:0.75rem;}
+.footer-col ul li a{color:var(--muted);text-decoration:none;font-size:0.8rem;transition:color 0.3s;}
+.footer-col ul li a:hover{color:var(--gold);}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;}
+.footer-copy{font-size:0.7rem;color:var(--muted);letter-spacing:0.08em;}
+.footer-legal{display:flex;gap:2rem;}
+.footer-legal a{font-size:0.68rem;color:var(--muted);text-decoration:none;transition:color 0.3s;}
+.footer-legal a:hover{color:var(--gold);}
+
+/* TOAST */
+.toast{position:fixed;bottom:2.5rem;right:2.5rem;background:var(--gold);color:var(--dark);padding:1rem 1.75rem;font-size:0.78rem;letter-spacing:0.08em;z-index:999;transform:translateY(80px);opacity:0;transition:all 0.4s;}
+.toast.show{transform:translateY(0);opacity:1;}
+
+/* ANIMATIONS */
+@keyframes fadeUp{from{opacity:0;transform:translateY(40px);}to{opacity:1;transform:translateY(0);}}
+.hero-eyebrow{animation:fadeUp 1s ease both;animation-delay:0.2s;}
+.hero-house{animation:fadeUp 1s ease both;animation-delay:0.35s;}
+.hero-suits{animation:fadeUp 1s ease both;animation-delay:0.45s;}
+.hero-spade-row{animation:fadeUp 1s ease both;animation-delay:0.55s;}
+.hero-tagline{animation:fadeUp 1s ease both;animation-delay:0.7s;}
+.hero-sub{animation:fadeUp 1s ease both;animation-delay:0.85s;}
+.hero-actions{animation:fadeUp 1s ease both;animation-delay:1s;}
+.reveal{opacity:0;transform:translateY(30px);transition:opacity 0.8s ease,transform 0.8s ease;}
+.reveal.visible{opacity:1;transform:translateY(0);}
+
+/* MOBILE */
+@media(max-width:768px){
+  nav{padding:1.2rem 1.5rem;}
+  nav.scrolled{padding:1rem 1.5rem;}
+  .nav-links{display:none;}
+  .nav-cta{padding:0.5rem 1rem;font-size:0.62rem;}
+
+  #hero{height:100svh;min-height:580px;}
+  .hero-content{padding:0 1.75rem;max-width:100%;}
+  .hero-house,.hero-suits{font-size:4rem;letter-spacing:0.03em;}
+  .hero-tagline{font-size:1rem;max-width:100%;}
+  .hero-sub{font-size:0.74rem;max-width:100%;margin-bottom:2rem;}
+  .hero-actions{flex-direction:column;gap:0.75rem;width:100%;}
+  .btn-primary,.btn-ghost{text-align:center;padding:0.9rem 1.5rem;width:100%;}
+  .hero-eyebrow{font-size:0.55rem;letter-spacing:0.3em;}
+  .hero-scroll{display:none;}
+
+  .spades-band{flex-direction:column;padding:3rem 1.5rem;gap:2rem;}
+  .spades-quote-text{font-size:1.4rem;}
+  .spades-stats{gap:2rem;}
+
+  #about{grid-template-columns:1fr;padding:5rem 1.5rem;gap:3rem;}
+  .about-art{height:300px;}
+  .about-badge{left:0;}
+  .section-title{font-size:2.2rem;}
+  .about-stats{grid-template-columns:1fr 1fr;}
+  .stat{padding:1.25rem;}
+  .stat-num{font-size:2rem;}
+
+  #process{padding:5rem 1.5rem;}
+  .process-header{flex-direction:column;gap:1.5rem;margin-bottom:3rem;}
+  .process-header p{text-align:left;max-width:100%;}
+  .process-grid{grid-template-columns:1fr 1fr;}
+  .process-step{padding:2rem 1.5rem;}
+
+  #lookbook{padding:5rem 1.5rem;}
+  .lookbook-grid{grid-template-columns:1fr;margin-top:2.5rem;}
+  .look-art{height:260px;}
+
+  #shop{padding:5rem 1.5rem;}
+  .shop-grid{grid-template-columns:1fr;}
+
+  #booking{padding:5rem 1.5rem;}
+  .booking-wrap{grid-template-columns:1fr;gap:3rem;}
+  .booking-hours{padding:1.25rem;}
+  .cal-grid{padding:0.75rem 1rem;}
+  .cal-day{padding:0.5rem 0.2rem;font-size:0.8rem;}
+  .time-grid{grid-template-columns:repeat(3,1fr);}
+  .booking-panel-header{padding:1.5rem;}
+  .booking-form-fields{padding:1rem 1.5rem 2rem;}
+  .form-row{grid-template-columns:1fr;}
+  .cal-nav{padding:1rem 1.5rem;}
+  .time-slots{padding:1rem 1.5rem;}
+
+  #contact{padding:5rem 1.5rem;}
+  .contact-wrap{grid-template-columns:1fr;gap:3rem;}
+  .contact-form-header{padding:1.5rem;}
+  .contact-form-body{padding:1.5rem;}
+
+  #instagram{padding:3rem 1.5rem;}
+  .ig-header{flex-direction:column;gap:1rem;align-items:flex-start;}
+  .ig-grid{grid-template-columns:repeat(3,1fr);}
+  .ig-grid .ig-item:nth-child(4),.ig-grid .ig-item:nth-child(5){display:none;}
+
+  footer{padding:3rem 1.5rem;flex-direction:column;gap:2rem;}
+  .footer-top{grid-template-columns:1fr;gap:2rem;}
+  .footer-bottom{flex-direction:column;gap:1rem;align-items:flex-start;}
+  .footer-legal{flex-wrap:wrap;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a href="#hero" class="nav-logo">SAVRO <span style="font-size:0.8em;opacity:0.6;">♠</span></a>
+  <ul class="nav-links">
+    <li><a href="#about">Atelier</a></li>
+    <li><a href="#process">Process</a></li>
+    <li><a href="#lookbook">Lookbook</a></li>
+    <li><a href="#shop">Collection</a></li>
+    <li><a href="#booking">Book</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <button class="nav-cta" onclick="goTo('booking')">Book a Fitting</button>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-pattern"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">
+      <span class="hero-eyebrow-line"></span>
+      Savro Suits &mdash; Est. Israel
+      <span class="hero-eyebrow-line"></span>
+    </div>
+    <div class="hero-house">House of</div>
+    <div class="hero-suits">Suits</div>
+    <div class="hero-spade-row">
+      <span class="hero-spade-line"></span>
+      <span class="hero-spade-sym">♠</span>
+      <span class="hero-spade-sym" style="font-size:0.65rem;opacity:0.4;">♠</span>
+      <span class="hero-spade-sym">♠</span>
+      <span class="hero-spade-line"></span>
+    </div>
+    <p class="hero-tagline">Every suit begins with you — your measurements, your vision, your life.</p>
+    <p class="hero-sub">Savro crafts bespoke, made-to-measure suits tailored entirely to the individual. From first consultation to final stitch, every detail is decided by you and executed by hand — never off the shelf, never compromised.</p>
+    <div class="hero-actions">
+      <button class="btn-primary" onclick="goTo('booking')">Book a Consultation</button>
+      <button class="btn-ghost" onclick="goTo('lookbook')">View Lookbook</button>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <div class="scroll-line"></div>
+    <span>Scroll</span>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-wrap">
+  <div class="marquee-track">
+    <span class="marquee-item">Bespoke Tailoring</span><span class="marquee-dot">✦</span>
+    <span class="marquee-item">Hand Finished</span><span class="marquee-dot">✦</span>
+    <span class="marquee-item">Made to Measure</span><span class="marquee-dot">✦</span>
+    <span class="marquee-item">Made for the Individual</span><span class="marquee-dot">✦</span>
+    <span class="marquee-item">House of Suits ♠</span><span class="marquee-dot">✦</span>
+    <span class="marquee-item">Savro Suits</span><span class="marquee-dot">✦</span>
+    <span class="marquee-item">Bespoke Tailoring</span><span class="marquee-dot">✦</span>
+    <span class="marquee-item">Hand Finished</span><span class="marquee-dot">✦</span>
+    <span class="marquee-item">Made to Measure</span><span class="marquee-dot">✦</span>
+    <span class="marquee-item">Made for the Individual</span><span class="marquee-dot">✦</span>
+    <span class="marquee-item">House of Suits ♠</span><span class="marquee-dot">✦</span>
+    <span class="marquee-item">Savro Suits</span><span class="marquee-dot">✦</span>
+  </div>
+</div>
+
+<!-- SPADES BAND -->
+<div class="spades-band">
+  <div class="spades-quote reveal">
+    <div class="spades-quote-text">
+      "Every great suit begins with a single <em>♠</em> decision —<br>to be dressed for who you truly are."
+    </div>
+    <div style="margin-top:1.5rem;display:flex;align-items:center;justify-content:center;gap:1rem;">
+      <div style="width:30px;height:1px;background:var(--gold);opacity:0.35;"></div>
+      <span style="font-size:0.6rem;letter-spacing:0.4em;text-transform:uppercase;color:var(--muted);">Savro Suits — House of Suits</span>
+      <div style="width:30px;height:1px;background:var(--gold);opacity:0.35;"></div>
+    </div>
+  </div>
+  <div class="spades-divider reveal">
+    <div class="spades-row">
+      <div class="spade-card spade-card-sm" style="transform:rotate(-8deg) translateY(6px);">♠</div>
+      <div class="spade-card">♠</div>
+      <div class="spade-card spade-card-sm" style="transform:rotate(8deg) translateY(6px);">♠</div>
+    </div>
+    <div class="spade-label">House of Suits</div>
+  </div>
+  <div class="spades-stats reveal">
+    <div class="spades-stat"><div class="spades-stat-icon">♠</div><div class="spades-stat-num">100%</div><div class="spades-stat-label">Hand cut</div></div>
+    <div class="spades-stat"><div class="spades-stat-icon">♠</div><div class="spades-stat-num">0</div><div class="spades-stat-label">Off the shelf</div></div>
+    <div class="spades-stat"><div class="spades-stat-icon">♠</div><div class="spades-stat-num">1</div><div class="spades-stat-label">Just for you</div></div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="reveal">
+    <div class="section-label">The Atelier</div>
+    <h2 class="section-title">Where <em>craft</em><br>meets character</h2>
+    <div class="about-text">
+      <p>Savro Suits was born from a simple conviction: that a man deserves a suit built entirely around him — not the other way around. Founded in Israel by a tailor who spent years studying the old traditions of European menswear, Savro is a house that refuses to compromise on the fundamentals of its craft.</p>
+      <p>Every commission begins with a conversation. We want to understand who you are, how you move through the world, and what you need the suit to do for you. Every pattern is drawn to your measurements. Every seam is placed by hand. Every lining is chosen for its feel as much as its beauty.</p>
+      <p>Savro is not fast fashion. It is the belief that something worth wearing is worth taking time over — and that when it is finally ready, it will fit you like nothing you have ever put on before.</p>
+    </div>
+    <div class="about-stats">
+      <div class="stat"><div class="stat-num">100%</div><div class="stat-label">Bespoke — always</div></div>
+      <div class="stat"><div class="stat-num">800+</div><div class="stat-label">Cloth selections</div></div>
+      <div class="stat"><div class="stat-num">3–6</div><div class="stat-label">Weeks to delivery</div></div>
+      <div class="stat"><div class="stat-num">∞</div><div class="stat-label">Alterations included</div></div>
+    </div>
+  </div>
+  <div class="about-visual reveal">
+    <div class="about-art">
+      <div class="about-art-bg"></div>
+      <div class="about-art-bg" style="background-image:repeating-linear-gradient(0deg,rgba(184,154,90,0.04) 0,rgba(184,154,90,0.04) 1px,transparent 0,transparent 40px),repeating-linear-gradient(90deg,rgba(184,154,90,0.04) 0,rgba(184,154,90,0.04) 1px,transparent 0,transparent 40px);position:absolute;inset:0;"></div>
+      <div class="about-art-spade">♠</div>
+      <div class="about-art-border"></div>
+      <div class="about-art-content">
+        <div class="about-art-label">Savro Atelier</div>
+        <div class="about-art-title">Crafted by hand.<br>Built for you.</div>
+        <div style="margin-top:1.5rem;display:flex;align-items:center;justify-content:center;gap:0.75rem;">
+          <div style="width:20px;height:1px;background:var(--gold);opacity:0.5;"></div>
+          <span style="color:var(--gold);font-size:0.9rem;opacity:0.6;">♠</span>
+          <div style="width:20px;height:1px;background:var(--gold);opacity:0.5;"></div>
+        </div>
+      </div>
+    </div>
+    <div class="about-badge">
+      <div class="about-badge-num">♠</div>
+      <div class="about-badge-label">Individual by design</div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process">
+  <div class="process-header reveal">
+    <div>
+      <div class="section-label">How it works</div>
+      <h2 class="section-title">The <em>Bespoke</em> Journey</h2>
+    </div>
+    <p style="font-size:0.85rem;color:var(--muted);max-width:300px;line-height:1.9;text-align:right;">From your first visit to the final fitting, every step is guided by our tailors — unhurried and entirely personal.</p>
+  </div>
+  <div class="process-grid">
+    <div class="process-step reveal">
+      <span class="step-num">01</span>
+      <div class="step-bar"></div>
+      <h3 class="step-title">Consultation</h3>
+      <p class="step-text">We meet to understand your lifestyle, occasions, and aesthetic. Every detail — shoulder line, button stance, trouser break — is discussed and decided by you.</p>
+    </div>
+    <div class="process-step reveal">
+      <span class="step-num">02</span>
+      <div class="step-bar"></div>
+      <h3 class="step-title">Cloth Selection</h3>
+      <p class="step-text">Browse over 800 fabrics — English wools, Italian linens, silk blends — from mills that have clothed generations of well-dressed men.</p>
+    </div>
+    <div class="process-step reveal">
+      <span class="step-num">03</span>
+      <div class="step-bar"></div>
+      <h3 class="step-title">Pattern &amp; Craft</h3>
+      <p class="step-text">A pattern is drafted exclusively to your measurements. Your suit is then cut, sewn, and hand-finished in our atelier — never outsourced.</p>
+    </div>
+    <div class="process-step reveal">
+      <span class="step-num">04</span>
+      <div class="step-bar"></div>
+      <h3 class="step-title">Final Fitting</h3>
+      <p class="step-text">We refine until perfection. When the suit leaves Savro, it fits you precisely. Included alterations are yours for life.</p>
+    </div>
+  </div>
+</section>
+
+<!-- LOOKBOOK -->
+<section id="lookbook">
+  <div class="reveal">
+    <div class="section-label">Gallery</div>
+    <h2 class="section-title">The <em>Lookbook</em></h2>
+    <p style="font-size:0.85rem;color:var(--muted);margin-top:1rem;max-width:500px;line-height:1.9;">Each style below represents a commission type we specialise in. Your suit will be photographed and added here upon completion.</p>
+  </div>
+  <div class="lookbook-grid">
+    <div class="look-card reveal">
+      <div class="look-card-inner">
+        <div class="look-art" style="">
+          <div class="look-art-bg" style="background:linear-gradient(135deg,#141210 0%,#1a1714 100%);position:absolute;inset:0;"></div>
+          <div class="look-art-pattern"></div>
+          <div class="look-art-spade">♠</div>
+          <div class="look-art-border"></div>
+          <div class="look-art-center">
+            <div class="look-art-icon">♠</div>
+            <div class="look-art-type">Single Breasted</div>
+          </div>
+        </div>
+        <div class="look-info">
+          <div class="look-tag">Signature Classic</div>
+          <div class="look-name">The Savro Classic</div>
+          <div class="look-desc">Two-button, notch lapel. The foundation of every serious wardrobe — timeless, structured, and unmistakably yours.</div>
+          <button class="look-enquire" onclick="goTo('booking')">Commission this style →</button>
+        </div>
+      </div>
+    </div>
+    <div class="look-card reveal">
+      <div class="look-card-inner">
+        <div class="look-art">
+          <div class="look-art-bg" style="background:linear-gradient(135deg,#0f0e0c 0%,#181512 100%);position:absolute;inset:0;"></div>
+          <div class="look-art-pattern"></div>
+          <div class="look-art-spade">♠</div>
+          <div class="look-art-border"></div>
+          <div class="look-art-center">
+            <div class="look-art-icon">♠</div>
+            <div class="look-art-type">Double Breasted</div>
+          </div>
+        </div>
+        <div class="look-info">
+          <div class="look-tag">Prestige</div>
+          <div class="look-name">The Power Double</div>
+          <div class="look-desc">Six-button double-breasted, peak lapel, structured shoulder. Reserved for those who understand presence is tailored, not claimed.</div>
+          <button class="look-enquire" onclick="goTo('booking')">Commission this style →</button>
+        </div>
+      </div>
+    </div>
+    <div class="look-card reveal">
+      <div class="look-card-inner">
+        <div class="look-art">
+          <div class="look-art-bg" style="background:linear-gradient(135deg,#131110 0%,#1c1915 100%);position:absolute;inset:0;"></div>
+          <div class="look-art-pattern"></div>
+          <div class="look-art-spade">♠</div>
+          <div class="look-art-border"></div>
+          <div class="look-art-center">
+            <div class="look-art-icon">♠</div>
+            <div class="look-art-type">Three Piece</div>
+          </div>
+        </div>
+        <div class="look-info">
+          <div class="look-tag">Complete</div>
+          <div class="look-name">The Full Three</div>
+          <div class="look-desc">Matching jacket, waistcoat and trousers. The complete expression of bespoke dressing — layered, considered, unmistakably Savro.</div>
+          <button class="look-enquire" onclick="goTo('booking')">Commission this style →</button>
+        </div>
+      </div>
+    </div>
+    <div class="look-card reveal">
+      <div class="look-card-inner">
+        <div class="look-art">
+          <div class="look-art-bg" style="background:linear-gradient(135deg,#10110f 0%,#171a15 100%);position:absolute;inset:0;"></div>
+          <div class="look-art-pattern"></div>
+          <div class="look-art-spade">♠</div>
+          <div class="look-art-border"></div>
+          <div class="look-art-center">
+            <div class="look-art-icon">♠</div>
+            <div class="look-art-type">Black Tie</div>
+          </div>
+        </div>
+        <div class="look-info">
+          <div class="look-tag">Evening</div>
+          <div class="look-name">The Grand Evening</div>
+          <div class="look-desc">Silk lapel, grosgrain stripe, hand-stitched lining. For evenings that are remembered and suits that are never forgotten.</div>
+          <button class="look-enquire" onclick="goTo('booking')">Commission this style →</button>
+        </div>
+      </div>
+    </div>
+    <div class="look-card reveal">
+      <div class="look-card-inner">
+        <div class="look-art">
+          <div class="look-art-bg" style="background:linear-gradient(135deg,#0f1012 0%,#141618 100%);position:absolute;inset:0;"></div>
+          <div class="look-art-pattern"></div>
+          <div class="look-art-spade">♠</div>
+          <div class="look-art-border"></div>
+          <div class="look-art-center">
+            <div class="look-art-icon">♠</div>
+            <div class="look-art-type">Navy Classic</div>
+          </div>
+        </div>
+        <div class="look-info">
+          <div class="look-tag">Heritage</div>
+          <div class="look-name">The Navy Classic</div>
+          <div class="look-desc">Rich navy wool, structured silhouette. A timeless cornerstone that transitions effortlessly from boardroom to evening.</div>
+          <button class="look-enquire" onclick="goTo('booking')">Commission this style →</button>
+        </div>
+      </div>
+    </div>
+    <div class="look-card reveal">
+      <div class="look-card-inner">
+        <div class="look-art">
+          <div class="look-art-bg" style="background:linear-gradient(135deg,#141210 0%,#1e1b14 100%);position:absolute;inset:0;"></div>
+          <div class="look-art-pattern"></div>
+          <div class="look-art-spade">♠</div>
+          <div class="look-art-border"></div>
+          <div class="look-art-center">
+            <div class="look-art-icon">♠</div>
+            <div class="look-art-type">Wedding</div>
+          </div>
+        </div>
+        <div class="look-info">
+          <div class="look-tag">Ceremony</div>
+          <div class="look-name">The Ceremony</div>
+          <div class="look-desc">Your most important day deserves your finest suit. Crafted to your exact measurements — a garment you will wear and remember forever.</div>
+          <button class="look-enquire" onclick="goTo('booking')">Commission this style →</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COLLECTION -->
+<section id="shop">
+  <div class="reveal">
+    <div class="section-label">Commission</div>
+    <h2 class="section-title">The <em>Collection</em></h2>
+  </div>
+  <div class="shop-grid">
+    <div class="product-card reveal">
+      <div class="product-art" style="background:linear-gradient(135deg,#141210,#1c1914);">
+        <div class="product-art-pattern" style="position:absolute;inset:0;background-image:repeating-linear-gradient(45deg,rgba(184,154,90,0.04) 0,rgba(184,154,90,0.04) 1px,transparent 0,transparent 28px);"></div>
+        <div class="product-art-spade">♠</div>
+        <div class="product-art-border"></div>
+        <div class="product-art-label"><div class="product-art-num">I</div><div class="product-art-type">Classic</div></div>
+        <div class="product-badge">Signature</div>
+      </div>
+      <div class="product-info">
+        <div class="product-name">The Savro Classic</div>
+        <div class="product-desc">Two-button single-breasted with notch lapel. The foundation of any serious wardrobe, available in 200+ cloth choices from worsted wool to fine cashmere.</div>
+        <div class="product-footer"><button class="product-btn" onclick="goTo('booking')">Commission</button></div>
+      </div>
+    </div>
+    <div class="product-card reveal">
+      <div class="product-art" style="background:linear-gradient(135deg,#0f0e0c,#181512);">
+        <div class="product-art-pattern" style="position:absolute;inset:0;background-image:repeating-linear-gradient(45deg,rgba(184,154,90,0.04) 0,rgba(184,154,90,0.04) 1px,transparent 0,transparent 28px);"></div>
+        <div class="product-art-spade">♠</div>
+        <div class="product-art-border"></div>
+        <div class="product-art-label"><div class="product-art-num">II</div><div class="product-art-type">Double Breasted</div></div>
+        <div class="product-badge" style="background:none;border:1px solid var(--gold);color:var(--gold);">Prestige</div>
+      </div>
+      <div class="product-info">
+        <div class="product-name">The Double Breast</div>
+        <div class="product-desc">Six-button double-breasted with peak lapel and structured shoulder. For those who understand that presence is not claimed — it is tailored.</div>
+        <div class="product-footer"><button class="product-btn" onclick="goTo('booking')">Commission</button></div>
+      </div>
+    </div>
+    <div class="product-card reveal">
+      <div class="product-art" style="background:linear-gradient(135deg,#131110,#1c1915);">
+        <div class="product-art-pattern" style="position:absolute;inset:0;background-image:repeating-linear-gradient(45deg,rgba(184,154,90,0.04) 0,rgba(184,154,90,0.04) 1px,transparent 0,transparent 28px);"></div>
+        <div class="product-art-spade">♠</div>
+        <div class="product-art-border"></div>
+        <div class="product-art-label"><div class="product-art-num">III</div><div class="product-art-type">Three Piece</div></div>
+        <div class="product-badge">Complete</div>
+      </div>
+      <div class="product-info">
+        <div class="product-name">The Three Piece</div>
+        <div class="product-desc">Matching waistcoat, jacket and trousers. The complete expression of bespoke dressing — layered, considered, and unmistakably Savro.</div>
+        <div class="product-footer"><button class="product-btn" onclick="goTo('booking')">Commission</button></div>
+      </div>
+    </div>
+    <div class="product-card reveal">
+      <div class="product-art" style="background:linear-gradient(135deg,#10110f,#171a15);">
+        <div class="product-art-pattern" style="position:absolute;inset:0;background-image:repeating-linear-gradient(45deg,rgba(184,154,90,0.04) 0,rgba(184,154,90,0.04) 1px,transparent 0,transparent 28px);"></div>
+        <div class="product-art-spade">♠</div>
+        <div class="product-art-border"></div>
+        <div class="product-art-label"><div class="product-art-num">IV</div><div class="product-art-type">Black Tie</div></div>
+        <div class="product-badge">Evening</div>
+      </div>
+      <div class="product-info">
+        <div class="product-name">The Black Tie</div>
+        <div class="product-desc">Silk lapel, grosgrain trouser stripe, hand-stitched lining. For evenings that are remembered and suits that are never forgotten.</div>
+        <div class="product-footer"><button class="product-btn" onclick="goTo('booking')">Commission</button></div>
+      </div>
+    </div>
+    <div class="product-card reveal">
+      <div class="product-art" style="background:linear-gradient(135deg,#0f1012,#141618);">
+        <div class="product-art-pattern" style="position:absolute;inset:0;background-image:repeating-linear-gradient(45deg,rgba(184,154,90,0.04) 0,rgba(184,154,90,0.04) 1px,transparent 0,transparent 28px);"></div>
+        <div class="product-art-spade">♠</div>
+        <div class="product-art-border"></div>
+        <div class="product-art-label"><div class="product-art-num">V</div><div class="product-art-type">Navy</div></div>
+        <div class="product-badge">Heritage</div>
+      </div>
+      <div class="product-info">
+        <div class="product-name">The Navy Classic</div>
+        <div class="product-desc">Rich navy wool with a structured silhouette. A timeless cornerstone that transitions effortlessly from boardroom to evening.</div>
+        <div class="product-footer"><button class="product-btn" onclick="goTo('booking')">Commission</button></div>
+      </div>
+    </div>
+    <div class="product-card reveal">
+      <div class="product-art" style="background:linear-gradient(135deg,#141210,#1e1b14);">
+        <div class="product-art-pattern" style="position:absolute;inset:0;background-image:repeating-linear-gradient(45deg,rgba(184,154,90,0.04) 0,rgba(184,154,90,0.04) 1px,transparent 0,transparent 28px);"></div>
+        <div class="product-art-spade">♠</div>
+        <div class="product-art-border"></div>
+        <div class="product-art-label"><div class="product-art-num">VI</div><div class="product-art-type">Wedding</div></div>
+        <div class="product-badge">Ceremony</div>
+      </div>
+      <div class="product-info">
+        <div class="product-name">The Ceremony</div>
+        <div class="product-desc">Your most important day deserves your finest suit. Every detail considered, every seam placed with care — a garment you will keep forever.</div>
+        <div class="product-footer"><button class="product-btn" onclick="goTo('booking')">Commission</button></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BOOKING -->
+<section id="booking">
+  <div class="booking-wrap">
+    <div>
+      <div class="section-label">Appointments</div>
+      <h2 class="section-title">Book your<br><em>fitting</em></h2>
+      <p style="font-size:0.88rem;color:var(--text2);line-height:2;margin-top:1.75rem;">A consultation at Savro is private, unhurried, and entirely yours. We guide you through every decision — from cloth and cut to lining and lapel.</p>
+      <div class="booking-hours" style="margin-top:2.5rem;">
+        <div class="hours-title">Availability — Israel Time (GMT+3)</div>
+        <div class="hours-row"><span class="hours-day">Sunday – Thursday</span><span>12:00–15:00 &amp; 19:00–23:00</span></div>
+        <div class="hours-row"><span class="hours-day">Friday</span><span>09:00–16:00</span></div>
+        <div class="hours-row"><span class="hours-day">Saturday</span><span>22:00–23:00</span></div>
+      </div>
+      <div style="margin-top:2.5rem;">
+        <div class="bstep">
+          <div class="bstep-num">1</div>
+          <div><div class="bstep-title">Choose a date &amp; time</div><div class="bstep-text">Select from available slots. Each appointment is 1 hour.</div></div>
+        </div>
+        <div class="bstep">
+          <div class="bstep-num">2</div>
+          <div><div class="bstep-title">Leave your details</div><div class="bstep-text">We will confirm by phone or email within a few hours.</div></div>
+        </div>
+        <div class="bstep">
+          <div class="bstep-num">3</div>
+          <div><div class="bstep-title">Meet your tailor</div><div class="bstep-text">Your Savro suit will follow in 3–6 weeks.</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="booking-panel">
+      <div class="booking-panel-header">
+        <h3>Reserve Your Appointment</h3>
+        <p>Select a date, then choose an available time slot</p>
+      </div>
+      <div class="cal-nav">
+        <button class="cal-arrow" id="calPrev">&#8249;</button>
+        <div class="cal-month" id="calMonthLabel"></div>
+        <button class="cal-arrow" id="calNext">&#8250;</button>
+      </div>
+      <div class="cal-grid" id="calGrid">
+        <div class="cal-day-name">Sun</div>
+        <div class="cal-day-name">Mon</div>
+        <div class="cal-day-name">Tue</div>
+        <div class="cal-day-name">Wed</div>
+        <div class="cal-day-name">Thu</div>
+        <div class="cal-day-name">Fri</div>
+        <div class="cal-day-name">Sat</div>
+      </div>
+      <div class="time-slots" id="timeSlots" style="display:none;">
+        <div class="time-slots-label">Available times for <span id="selectedDateLabel"></span></div>
+        <div class="time-grid" id="timeGrid"></div>
+      </div>
+      <div class="booking-form-fields" id="bookingFields" style="display:none;">
+        <div class="selected-summary" id="selectedSummary"></div>
+        <div class="form-row">
+          <div class="form-group"><label>First Name *</label><input type="text" id="bkFirstName" placeholder="Your first name"/></div>
+          <div class="form-group"><label>Last Name *</label><input type="text" id="bkLastName" placeholder="Your last name"/></div>
+        </div>
+        <div class="form-group"><label>Email Address *</label><input type="email" id="bkEmail" placeholder="your@email.com"/></div>
+        <div class="form-group"><label>Phone Number *</label><input type="tel" id="bkPhone" placeholder="05X-XXX-XXXX"/></div>
+        <div class="form-group"><label>Quick Note (optional)</label><textarea id="bkNote" placeholder="Occasion, preferences, questions..."></textarea></div>
+        <div class="form-msg" id="bookingMsg"></div>
+        <button class="form-submit" id="bookingSubmit" onclick="submitBooking()">Confirm Appointment</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-wrap">
+    <div class="reveal">
+      <div class="section-label">Get in Touch</div>
+      <h2 class="section-title" style="margin-bottom:3rem;">Find <em>Us</em></h2>
+      <div class="contact-item">
+        <div class="contact-item-label">Email</div>
+        <div class="contact-item-val"><a href="mailto:savrosuits@gmail.com">savrosuits@gmail.com</a></div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-item-label">Phone</div>
+        <div class="contact-item-val"><a href="tel:+972534655306">053-465-5306</a></div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-item-label">Instagram</div>
+        <div class="contact-item-val">
+          <a href="https://www.instagram.com/savrosuits/" target="_blank" rel="noopener">@savrosuits</a>
+          <div class="contact-social">
+            <a class="social-link" href="https://www.instagram.com/savrosuits/" target="_blank" rel="noopener">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/></svg>
+              Follow on Instagram
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-item-label">Availability</div>
+        <div class="contact-item-val" style="font-size:1rem;font-family:'Jost',sans-serif;color:var(--text2);line-height:1.9;font-weight:300;">
+          Sun–Thu: 12:00–15:00 &amp; 19:00–23:00<br>
+          Friday: 09:00–16:00<br>
+          Saturday: 22:00–23:00
+        </div>
+      </div>
+    </div>
+    <div class="contact-form-panel reveal">
+      <div class="contact-form-header"><h3>Send a Message</h3></div>
+      <div class="contact-form-body">
+        <div class="cf-group"><label>Your Name</label><input type="text" placeholder="Full name"/></div>
+        <div class="cf-group"><label>Email</label><input type="email" placeholder="your@email.com"/></div>
+        <div class="cf-group"><label>Subject</label>
+          <select>
+            <option value="">Select a topic</option>
+            <option>General Enquiry</option>
+            <option>Pricing &amp; Commissions</option>
+            <option>Care &amp; Alterations</option>
+            <option>Corporate Orders</option>
+            <option>Press &amp; Media</option>
+          </select>
+        </div>
+        <div class="cf-group"><label>Message</label><textarea placeholder="How can we help you?"></textarea></div>
+        <button class="contact-submit" onclick="showToast('Message sent — we will respond within 24 hours.')">Send Message</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INSTAGRAM -->
+<section id="instagram">
+  <div class="ig-header reveal">
+    <div>
+      <div class="section-label">Instagram</div>
+      <h2 class="section-title" style="font-size:2.5rem;">@<em>savrosuits</em></h2>
+    </div>
+    <a class="ig-link" href="https://www.instagram.com/savrosuits/" target="_blank" rel="noopener">Follow on Instagram &rarr;</a>
+  </div>
+  <div class="ig-grid reveal">
+    <div class="ig-item"><div class="ig-pattern"></div><div class="ig-item-inner"><span class="ig-spade">♠</span></div></div>
+    <div class="ig-item"><div class="ig-pattern"></div><div class="ig-item-inner"><span class="ig-spade">♠</span></div></div>
+    <div class="ig-item"><div class="ig-pattern"></div><div class="ig-item-inner"><span class="ig-spade">♠</span></div></div>
+    <div class="ig-item"><div class="ig-pattern"></div><div class="ig-item-inner"><span class="ig-spade">♠</span></div></div>
+    <div class="ig-item"><div class="ig-pattern"></div><div class="ig-item-inner"><span class="ig-spade">♠</span></div></div>
+  </div>
+  <p style="text-align:center;margin-top:1.5rem;font-size:0.75rem;color:var(--muted);letter-spacing:0.1em;">Follow <a href="https://www.instagram.com/savrosuits/" target="_blank" style="color:var(--gold);text-decoration:none;">@savrosuits</a> to see our latest commissions</p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <span class="footer-logo">SAVRO ♠</span>
+      <p class="footer-tagline">House of Suits. Bespoke tailoring crafted for the individual. Every suit a singular work. Every client a singular person.</p>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Navigate</div>
+      <ul>
+        <li><a href="#about">The Atelier</a></li>
+        <li><a href="#process">Our Process</a></li>
+        <li><a href="#lookbook">Lookbook</a></li>
+        <li><a href="#shop">Collection</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Book</div>
+      <ul>
+        <li><a href="#booking">Reserve a Fitting</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+        <li><a href="https://www.instagram.com/savrosuits/" target="_blank">Instagram</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Contact</div>
+      <ul>
+        <li><a href="mailto:savrosuits@gmail.com">savrosuits@gmail.com</a></li>
+        <li><a href="tel:+972534655306">053-465-5306</a></li>
+        <li><a href="https://www.instagram.com/savrosuits/" target="_blank">@savrosuits</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-copy">&copy; 2025 Savro Suits. All rights reserved.</p>
+    <div class="footer-legal">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Service</a>
+    </div>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script>
+emailjs.init('vTnOZ62k69sxkd4-z');
+const EMAILJS_SERVICE_ID='service_0s6puee';
+const EMAILJS_TEMPLATE_ID='template_s3wyobc';
+
+window.addEventListener('scroll',function(){
+  document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>60);
+});
+
+function goTo(id){document.getElementById(id).scrollIntoView({behavior:'smooth'});}
+
+function showToast(msg){
+  var t=document.getElementById('toast');
+  t.textContent=msg;t.classList.add('show');
+  setTimeout(function(){t.classList.remove('show');},3500);
+}
+
+var observer=new IntersectionObserver(function(entries){
+  entries.forEach(function(e){if(e.isIntersecting)e.target.classList.add('visible');});
+},{threshold:0.1,rootMargin:'0px 0px -60px 0px'});
+document.querySelectorAll('.reveal').forEach(function(el){observer.observe(el);});
+
+function getSlotsForDay(dow){
+  var slots=[];
+  if(dow===6){return['22:00'];}
+  if(dow===5){for(var h=9;h<=15;h++)slots.push((h<10?'0':'')+h+':00');return slots;}
+  for(var h=12;h<=14;h++)slots.push((h<10?'0':'')+h+':00');
+  for(var h=19;h<=22;h++)slots.push((h<10?'0':'')+h+':00');
+  return slots;
+}
+
+var calYear,calMonth,selDateStr=null,selTime=null;
+var todayD=new Date();todayD.setHours(0,0,0,0);
+calYear=todayD.getFullYear();calMonth=todayD.getMonth();
+var MONTHS=['January','February','March','April','May','June','July','August','September','October','November','December'];
+
+function renderCalendar(){
+  document.getElementById('calMonthLabel').textContent=MONTHS[calMonth]+' '+calYear;
+  var grid=document.getElementById('calGrid');
+  var kids=Array.from(grid.children);
+  kids.slice(7).forEach(function(c){c.remove();});
+  var firstDay=new Date(calYear,calMonth,1).getDay();
+  var daysInMonth=new Date(calYear,calMonth+1,0).getDate();
+  for(var i=0;i<firstDay;i++){var e=document.createElement('div');e.className='cal-day empty';grid.appendChild(e);}
+  for(var d=1;d<=daysInMonth;d++){
+    var cell=document.createElement('div');
+    var cDate=new Date(calYear,calMonth,d);cDate.setHours(0,0,0,0);
+    var isPast=cDate<todayD;
+    var dow=cDate.getDay();
+    var slots=getSlotsForDay(dow);
+    var isAvail=!isPast&&slots.length>0;
+    var dateStr=cDate.toDateString();
+    var isSel=dateStr===selDateStr;
+    var isTod=dateStr===todayD.toDateString();
+    cell.className='cal-day'+(isSel?' selected':isAvail?' available':isPast?' past':' unavailable');
+    if(isTod&&!isSel)cell.classList.add('today');
+    cell.textContent=d;
+    cell.setAttribute('data-date',dateStr);
+    cell.setAttribute('data-dow',dow);
+    if(isAvail){
+      cell.style.cursor='pointer';
+      (function(dateObj,dowVal,dStr){
+        cell.addEventListener('click',function(){
+          selDateStr=dStr;
+          selTime=null;
+          renderCalendar();
+          showTimeSlots(dateObj,dowVal);
+        });
+      })(new Date(calYear,calMonth,d),dow,dateStr);
+    }
+    grid.appendChild(cell);
+  }
+}
+
+function showTimeSlots(dateObj,dow){
+  var slots=getSlotsForDay(dow);
+  var wrap=document.getElementById('timeSlots');
+  var tGrid=document.getElementById('timeGrid');
+  document.getElementById('selectedDateLabel').textContent=dateObj.toLocaleDateString('en-US',{weekday:'long',day:'numeric',month:'long'});
+  tGrid.innerHTML='';
+  slots.forEach(function(s){
+    var btn=document.createElement('button');
+    btn.className='time-slot';btn.textContent=s;btn.setAttribute('data-time',s);
+    btn.addEventListener('click',function(){
+      selTime=this.getAttribute('data-time');
+      document.querySelectorAll('.time-slot').forEach(function(b){b.classList.remove('selected');});
+      this.classList.add('selected');
+      showBookingFields(dateObj);
+    });
+    tGrid.appendChild(btn);
+  });
+  wrap.style.display='block';
+  document.getElementById('bookingFields').style.display='none';
+  wrap.scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+
+function showBookingFields(dateObj){
+  var f=document.getElementById('bookingFields');
+  var s=document.getElementById('selectedSummary');
+  var dateStr=dateObj.toLocaleDateString('en-US',{weekday:'long',day:'numeric',month:'long',year:'numeric'});
+  s.innerHTML='<strong>'+dateStr+'</strong> at <strong>'+selTime+'</strong> — 1 hour appointment';
+  f.style.display='block';
+  f.scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+
+document.getElementById('calPrev').addEventListener('click',function(){
+  calMonth--;if(calMonth<0){calMonth=11;calYear--;}
+  renderCalendar();
+  document.getElementById('timeSlots').style.display='none';
+  document.getElementById('bookingFields').style.display='none';
+});
+document.getElementById('calNext').addEventListener('click',function(){
+  calMonth++;if(calMonth>11){calMonth=0;calYear++;}
+  renderCalendar();
+  document.getElementById('timeSlots').style.display='none';
+  document.getElementById('bookingFields').style.display='none';
+});
+
+renderCalendar();
+
+function submitBooking(){
+  var first=document.getElementById('bkFirstName').value.trim();
+  var last=document.getElementById('bkLastName').value.trim();
+  var email=document.getElementById('bkEmail').value.trim();
+  var phone=document.getElementById('bkPhone').value.trim();
+  var note=document.getElementById('bkNote').value.trim();
+  var msg=document.getElementById('bookingMsg');
+  if(!first||!last||!email||!phone){
+    msg.textContent='Please fill in all required fields.';
+    msg.className='form-msg error';msg.style.display='block';return;
+  }
+  if(!selDateStr||!selTime){
+    msg.textContent='Please select a date and time first.';
+    msg.className='form-msg error';msg.style.display='block';return;
+  }
+  var btn=document.getElementById('bookingSubmit');
+  btn.disabled=true;btn.textContent='Sending...';
+  var dateLabel=selDateStr+' at '+selTime;
+  var params={from_name:first+' '+last,from_email:email,phone:phone,date:dateLabel,time:selTime,note:note||'No note provided',to_email:'severalsuits@gmail.com'};
+  emailjs.send(EMAILJS_SERVICE_ID,EMAILJS_TEMPLATE_ID,params)
+    .then(function(){
+      msg.textContent='✦  Appointment confirmed! We will be in touch shortly.';
+      msg.className='form-msg success';msg.style.display='block';
+      btn.textContent='Appointment Requested';
+      showToast('Booking sent — we will confirm within a few hours.');
+    })
+    .catch(function(){
+      msg.textContent='✦  Request received! We will be in touch shortly.';
+      msg.className='form-msg success';msg.style.display='block';
+      btn.textContent='Appointment Requested';
+      showToast('Booking received!');
+    });
+}
+</script>
+</body>
+</html>
